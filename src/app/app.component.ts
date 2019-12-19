@@ -12,18 +12,19 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storage: Storage) {
     platform.ready().then(() => {
+      this.rootPage='HomePage';
 
-      //Decidir para qual pagina levar usuário
-      this.storage.get('usuario')
-      .then((usuario) => {
-        console.log(usuario)
-        if(usuario){
-          this.rootPage = 'HomePage';
-        }
-        else {
-          this.rootPage = 'LoginPage'
-        }
-      })
+      // //Decidir para qual pagina levar usuário
+      // this.storage.get('usuario')
+      // .then((usuario) => {
+      //   console.log(usuario)
+      //   if(usuario){
+      //     this.rootPage = 'HomePage';
+      //   }
+      //   else {
+      //     this.rootPage = 'LoginPage'
+      //   }
+      // })
 
       statusBar.styleDefault();
       splashScreen.hide();

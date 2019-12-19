@@ -22,6 +22,8 @@ import { FirebaseProvider } from '../providers/firebase';
 //Pages
 import { LoginPageModule } from '../pages/login/login.module';
 import { HomePageModule } from '../pages/home/home.module';
+import { StoreDetailPageModule } from '../pages/store-detail/store-detail.module';
+import { ItemDetailPageModule } from '../pages/item-detail/item-detail.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { HomePageModule } from '../pages/home/home.module';
     //Pages
     LoginPageModule,
     HomePageModule,
+    StoreDetailPageModule,
+    ItemDetailPageModule,
     //Others
     BrowserModule,
     BrowserAnimationsModule,

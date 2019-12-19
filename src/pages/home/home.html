@@ -1,11 +1,12 @@
 <ion-header>
-
-  <ion-navbar>
-    <button ion-button icon-only class="bg-transparent">
+    <ion-navbar>
+    <button menuToggle ion-button icon-only class="bg-transparent">
       <ion-icon class="white-icon" name="menu"></ion-icon>
     </button>
-
-
+    <ion-title>              
+      <p class="subtitle">Delivery to</p>
+      Bahati- Maringo <ion-icon name="create"></ion-icon>
+    </ion-title>
     <ion-buttons end>
       <button ion-button icon-only class="bg-transparent">
         <ion-icon class="white-icon" name="ios-cart-outline"></ion-icon>
@@ -16,23 +17,50 @@
 </ion-header>
 
 <ion-content>
-  <div class="yellow-div">
+  <!-- <div class="yellow-div">
     <div class="fullscreenCenter">
-      <h2 class="featured-text">Explore nossas<br>delícias ;p</h2>
+      <h2 class="featured-text">Explore  <br>food and drinks</h2>
     </div>
-
-
-    <ion-slides pager class="customSlides">
+      <ion-slides pager class="customSlides">
       <ion-slide *ngFor="let b of burgers; let i = index" class="customSlide" [ngStyle]="{ 'background-image': 'url(' + b.image + ')'}" [ngClass]="{'left20':i > 0}">
-        <!-- TEXT -->
+        TEXT
         <div class="burgerInfo">
           <p class="burgerName">{{b.name}}</p>
           <p class="burgerPrice">{{ b.price | currency:'BRL' }}</p>
         </div>
 
-        <!-- ADD -->
+        ADD
         <img class="addIcon" src="assets/imgs/add.png">
       </ion-slide>
     </ion-slides>
-  </div>
+  </div> -->
+  <div class="top-fix">
+    <ion-slides pager>
+        <ion-slide *ngFor="let slide of slides">
+            <img [src]="slide.image" class="slide-image" />
+            <div class="banner-text">
+                <!-- <small [innerHTML]="slide.smalltext"></small>
+                <p [innerHTML]="slide.description"></p> -->
+                <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+            </div>
+        </ion-slide>
+    </ion-slides>
+    <div class="search-box">
+        <ion-searchbar (ionInput)="getItems($event)" placeholder="Search for a vendor or product..." (click)="search()"></ion-searchbar>
+    </div>
+</div>
+<br>
+<ion-card padding *ngFor="let store of stores" (click)="storeDetail()">
+  <img src="assets/imgs/kfc.png">
+  <ion-card-content>
+    <ion-card-title>
+      {{store.title}}
+    </ion-card-title>
+    <p>
+      {{store.food}} <br>
+      $$ . $$
+    </p>
+  </ion-card-content>
+</ion-card>
+
 </ion-content>

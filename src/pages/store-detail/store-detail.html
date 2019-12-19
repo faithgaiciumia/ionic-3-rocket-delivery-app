@@ -1,0 +1,114 @@
+<!--
+  Generated template for the StoreDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!-- <ion-navbar>
+    <ion-title>store_detail</ion-title>
+    
+  </ion-navbar> -->
+  <img src="assets/imgs/kfc.png">
+</ion-header>
+<ion-content padding >
+  <h3> KFC-Buruburu </h3>
+  <p style="color: gray;"> <ion-icon name="star"></ion-icon> 4.9 . $$ Min Order 0 Ksh . Delivery fee 150 Ksh </p>
+  <div style="background-color: #FDB813;">
+    <ion-grid>
+      <ion-row>        
+        <ion-col size="8">          
+            Festive Deal!! <br>
+            Expires on 2019-12-31                    
+         </ion-col>         
+      </ion-row>
+    </ion-grid>
+  </div> <br>             
+        <ion-segment [(ngModel)]="meal_type">
+          <ion-segment-button checked value="festive">
+            FESTIVE DEAL!!!
+          </ion-segment-button>
+          <ion-segment-button value="streetwise">
+            STREETWISE 2 DISCOUNT
+          </ion-segment-button>
+          <ion-segment-button value="sharing">
+            SHARING MEALS
+          </ion-segment-button>
+          <ion-segment-button value="lunch">
+            LUNCH BOX
+          </ion-segment-button>
+          <ion-segment-button value="chicken">
+            CHICKEN DEALS
+          </ion-segment-button>
+          <ion-segment-button value="combo">
+            Combo
+          </ion-segment-button>
+        </ion-segment>
+        <div [ngSwitch]="meal_type">
+          <!-- festive -->
+          <ion-list *ngSwitchCase="'festive'"  >            
+            <ion-card *ngFor="let item of festives" (click)="itemDescription(item)">
+              <ion-item>
+                <ion-thumbnail item-left>
+                <img [src]="item.image">
+                </ion-thumbnail>
+                <h2>
+                  {{item.title}}
+                </h2>
+                <p style="color: gray;">
+                  {{item.description}}
+                </p>
+                <p><strong>
+                  {{item.price}}
+                </strong> </p>
+              </ion-item>
+            </ion-card>             
+          </ion-list>
+           <!-- festive  -->
+           <!-- streetwise -->
+          <ion-list *ngSwitchCase="'streetwise'">
+            <ion-card *ngFor="let item of streetwise" (click)="itemDescription(item)">
+              <ion-item>
+                <ion-thumbnail item-left>
+                <img [src]="item.image">
+                </ion-thumbnail>
+                <h2>
+                  {{item.title}}
+                </h2>
+                <p style="color: gray;">
+                  {{item.description}}
+                </p>
+                <p><strong>
+                  {{item.price}}
+                </strong> </p>
+              </ion-item>
+            </ion-card>
+          </ion-list>
+          <!-- streetwise -->
+          <!-- sharing -->
+          <ion-list *ngSwitchCase="'sharing'">
+            <ion-card *ngFor="let item of sharing" (click)="itemDescription(item)">
+              <ion-item>
+                <ion-thumbnail item-left>
+                <img [src]="item.image">
+                </ion-thumbnail>
+                <h2>
+                  {{item.title}}
+                </h2>
+                <p style="color: gray;">
+                  {{item.description}}
+                </p>
+                <p><strong>
+                  {{item.price}}
+                </strong> </p>
+              </ion-item>
+            </ion-card>
+          </ion-list>
+        </div>
+  
+          
+    
+  
+  
+
+</ion-content>

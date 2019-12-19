@@ -1,42 +1,150 @@
 page-home {
-    .toolbar-background {
-        background: #FDB813;
-        border: none !important
+    ion-header {
+        .toolbar-background {
+            background: #FDB813;
+            border: none !important
+        }
+        .toolbar-title {
+            .subtitle {
+              font-size: 66%;
+              margin: 0;
+            }
+          }
     }
-
+    ion-title {
+        img {
+            height: 11px;
+            margin: auto;
+            display: block;
+        }
+    }
+    ion-slides {
+        img {
+            display: block;
+        }
+    }
+    .banner-text {
+        position: absolute;
+        color: #fff;
+        text-align: right;
+        height: 100px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 10px;
+        p {
+            font-size: 2.5rem;
+            font-weight: 100;
+            margin: 0;
+        }
+        h2 {
+            margin: 2.5rem 0 0;
+            font-size: 1.8rem;
+        }
+    }
+    .search-box {
+        position: absolute;
+        width: 100%;
+        margin-top: -29px;
+        z-index: 1;
+        padding: 0 5px;
+        .searchbar-input-container {
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.15);
+            .searchbar-input {
+                font-size: 1.5rem;
+                font-weight: 200;
+                padding: 8px 55px;
+                border-radius: 8px;
+            }
+            .searchbar-search-icon {
+                top: 12;
+            }
+        }
+    }
+    .cat-list {
+        margin-top: 42px;
+        .products-item {
+            width: 105px;
+            margin: 0;
+            margin-left: 8px;
+            text-align: center;
+            border-radius: 10px;
+            display: inline-block;
+            background: rgba(0, 0, 0, 0);
+            overflow: hidden;
+            &:first-child {
+                margin-left: 16px;
+            }
+            &:last-child {
+                margin-right: 16px;
+            }
+            ion-card-content {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+                color: #fff;
+                padding: 13px 12px;
+                z-index: 1;
+                &::after {
+                    content: '';
+                    background: rgba(0, 0, 0, 0.6);
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    min-height: 100%;
+                    min-width: 100%;
+                    position: absolute;
+                    z-index: -1;
+                }
+                img {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    z-index: -2;
+                }
+            }
+        }
+    }
+    .products {
+        p {
+            &.text-light {
+                margin-top: 0;
+            }
+        }
+    }
     .bg-transparent {
         background: transparent
     }
-
     .white-icon {
         color: #fff
     }
-
     .yellow-div {
         width: 100%;
         height: 50%;
         background: #FDB813;
     }
-
     .fullscreenCenter {
         width: 100%;
         position: absolute;
     }
-
     .featured-text {
         font-weight: 700;
         color: #4B4237;
         text-align: left;
         margin-left: 25%;
     }
-
     .customSlides {
         width: 100%;
         position: absolute;
         height: 38%;
         top: 35%;
     }
-
     .customSlide {
         width: 80% !important;
         margin-left: 10%;
@@ -44,7 +152,6 @@ page-home {
         height: 80%;
         background-size: cover;
     }
-
     .slide-zoom {
         border-radius: 15px;
         width: 100%;
@@ -89,5 +196,5 @@ page-home {
 
     .left20{
         margin-left: 20% !important
-    }
-}
+    }  
+ }
